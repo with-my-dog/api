@@ -1,0 +1,9 @@
+Dockerfile
+.gitignore
+.dockerignore
+node_modules
+.nyc_output
+lib
+*.md
+.git
+.vscode

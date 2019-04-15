@@ -1,0 +1,800 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Withmydog api",
+    "description": "withmydog api documentation",
+    "version": "1.0.0"
+  },
+  "host": "localhost:5000",
+  "basePath": "/",
+  "paths": {
+    "/auth": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "parameters": [{
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "email": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              }
+            }
+          }
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "access": {
+                  "type": "string"
+                },
+                "refresh": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [{
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "email": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "access": {
+                  "type": "string"
+                },
+                "refresh": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [{
+          "name": "Authorization",
+          "in": "header",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "refresh",
+          "in": "header",
+          "required": true,
+          "type": "string"
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "exp": {
+                  "type": "number"
+                },
+                "createdAt": {
+                  "type": "string"
+                },
+                "updatedAt": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [{
+          "name": "Authorization",
+          "in": "header",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "refresh",
+          "in": "header",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          }
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Users"
+        ],"parameters": [{
+          "name": "Authorization",
+          "in": "header",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "refresh",
+          "in": "header",
+          "required": true,
+          "type": "string"
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/shops": {
+      "post": {
+        "tags": [
+          "Shops"
+        ],
+        "parameters": [{
+          "name": "Authorization",
+          "in": "header",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "refresh",
+          "in": "header",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "latitude": {
+                "type": "number"
+              },
+              "longitude": {
+                "type": "number"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "open": {
+                "type": "string"
+              },
+              "close": {
+                "type": "string"
+              },
+              "shopCategoryId": {
+                "type": "number"
+              },
+              "petTypeId": {
+                "type": "number"
+              }
+            }
+          }
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "address": {
+                  "type": "string"
+                },
+                "latitude": {
+                  "type": "string"
+                },
+                "longitude": {
+                  "type": "string"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "open": {
+                  "type": "string"
+                },
+                "close": {
+                  "type": "string"
+                },
+                "shopCategoryId": {
+                  "type": "string"
+                },
+                "petTypeId": {
+                  "type": "string"
+                },
+                "createdAt": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Shops"
+        ],
+        "parameters": [{
+          "name": "swlongitude",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "swlatitude",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "nelongitude",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "nelatitude",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "string"
+                  },
+                  "latitude": {
+                    "type": "string"
+                  },
+                  "longitude": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  },
+                  "open": {
+                    "type": "string"
+                  },
+                  "close": {
+                    "type": "string"
+                  },
+                  "createdAt": {
+                    "type": "string"
+                  },
+                  "updatedAt": {
+                    "type": "string"
+                  },
+                  "deletedAt": {
+                    "type": "string"
+                  },
+                  "shopCategoryId": {
+                    "type": "string"
+                  },
+                  "petTypeId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/shops/{id}": {
+      "get": {
+        "tags": [
+          "Shops"
+        ],
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "number"
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "address": {
+                  "type": "string"
+                },
+                "latitude": {
+                  "type": "string"
+                },
+                "longitude": {
+                  "type": "string"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "open": {
+                  "type": "string"
+                },
+                "close": {
+                  "type": "string"
+                },
+                "createdAt": {
+                  "type": "string"
+                },
+                "updatedAt": {
+                  "type": "string"
+                },
+                "deletedAt": {
+                  "type": "string"
+                },
+                "shopCategoryId": {
+                  "type": "string"
+                },
+                "petTypeId": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Shops"
+        ],
+        "parameters": [{
+          "name": "Authorization",
+          "in": "header",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "refresh",
+          "in": "header",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "latitude": {
+                "type": "number"
+              },
+              "longitude": {
+                "type": "number"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "open": {
+                "type": "string"
+              },
+              "close": {
+                "type": "string"
+              },
+              "shopCategoryId": {
+                "type": "number"
+              },
+              "petTypeId": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        {
+         "name": "id",
+         "in": "path",
+         "required": true,
+         "type": "number"
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Shops"
+        ],
+        "parameters": [{
+          "name": "Authorization",
+          "in": "header",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "refresh",
+          "in": "header",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "number"
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/reviews": {
+      "post": {
+        "tags": [
+          "Reviews"
+        ],
+        "parameters": [{
+          "name": "Authorization",
+          "in": "header",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "refresh",
+          "in": "header",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "content": {
+                "type": "string"
+              },
+              "shopId": {
+                "type": "number"
+              },
+              "petTypeId": {
+                "type": "number"
+              },
+              "shopCategoryId": {
+                "type": "number"
+              },
+              "petAttitudeId": {
+                "type": "number"
+              },
+              "shopAvailableId": {
+                "type": "number"
+              },
+              "reservationId": {
+                "type": "number"
+              }
+            }
+          }
+        }],
+        "responses": {
+          "201": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "shopId": {
+                  "type": "number"
+                },
+                "petTypeId": {
+                  "type": "number"
+                },
+                "shopCategoryId": {
+                  "type": "number"
+                },
+                "petAttitudeId": {
+                  "type": "number"
+                },
+                "shopAvailableId": {
+                  "type": "number"
+                },
+                "reservationId": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Reviews"
+        ],
+        "parameters": [{
+          "name": "Authorization",
+          "in": "header",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "refresh",
+          "in": "header",
+          "required": true,
+          "type": "string"
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+
+                }
+              }
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/reviews/{reviewId}": {
+      "delete": {
+        "tags": [
+          "Reviews"
+        ],
+        "parameters": [{
+          "name": "Authorization",
+          "in": "header",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "refresh",
+          "in": "header",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "reviewId",
+          "in": "path",
+          "required": true,
+          "type": "number"
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          },
+          "404": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
