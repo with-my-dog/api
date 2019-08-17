@@ -7,3 +7,5 @@ lib
 *.md
 .git
 .vscode
+*.yml
+nginx.conf

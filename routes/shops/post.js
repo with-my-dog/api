@@ -24,7 +24,7 @@ export default async (request, response) => {
     }
 
     if (!open) {
-      return response.status(400).send('invalid  open time');
+      return response.status(400).send('invalid open time');
     }
 
     if (!close) {

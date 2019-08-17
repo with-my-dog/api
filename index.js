@@ -36,6 +36,9 @@ if (!server.production) {
 app.use('/', routes);
 app.use('/*', (_, response) => response.status(404).end());
 
-sequelize.sync({ force: database.sync }).then(() => seeds()).catch(() => process.exit(1));
+sequelize.sync({ force: database.sync }).then(() => seeds()).catch(() => {
+  console.error('\x1b[31m Error: can not sync or connect to database. Please check your database for this application.');
+  process.exit(1);
+});
 
 app.listen(server.port);
